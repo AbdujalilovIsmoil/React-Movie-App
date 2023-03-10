@@ -38,10 +38,12 @@ class Main extends Component {
             <div className="row">
               {this.state.loading ? (
                 <Loader />
-              ) : (
+              ) : this.state.movies?.length ? (
                 this.state.movies?.map((el) => (
                   <Movies movies={el} key={el.imdbID} />
                 ))
+              ) : (
+                <h1 className="text-center">NOT FOUND</h1>
               )}
             </div>
           </main>
